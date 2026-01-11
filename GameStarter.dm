@@ -165,7 +165,7 @@ proc/StartGame()
 			winshow(M,"hostopt",0)
 	updateworld()
 	if(gamemode=="Secret")
-		if(playersjoined<4)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 4 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
@@ -179,14 +179,14 @@ proc/StartGame()
 				AutoHoster(autohostcount)
 			return
 	else if(gamemode=="Normal")
-		if(playersjoined<2)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 2 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
 				AutoHoster(autohostcount)
 			return
 	else if(gamemode=="Death Note")
-		if(playersjoined<3)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 3 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
@@ -200,28 +200,28 @@ proc/StartGame()
 				AutoHoster(autohostcount)
 			return
 	else if(gamemode=="Doppelganger")
-		if(playersjoined<3)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 3 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
 				AutoHoster(autohostcount)
 			return
 	else if(gamemode=="Ghost")
-		if(playersjoined<4)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 4 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
 				AutoHoster(autohostcount)
 			return
 	else if(gamemode=="Witch")
-		if(playersjoined<2)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 2 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
 				AutoHoster(autohostcount)
 			return
 	else if(gamemode=="Zombie")
-		if(playersjoined<2)
+		if(playersjoined<1)
 			world << "<b><font color=aqua>[lightbot]</b> </font>Need 2 or more players for this mode."
 			if(autohost==1)
 				world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
@@ -235,7 +235,7 @@ proc/StartGame()
 				AutoHoster(autohostcount)
 			return
 	//else if (gamemode == "Lyoko")
-	//	if (playersjoined<6)
+	//	if (playersjoined<1)
 	//		world << "<b><font color=aqua>[lightbot]</b> </font>Need 6 or more players for this mode."
 	//		if(autohost==1)
 	//			world << "<b><font color=aqua>[lightbot]</b> </font>Auto hosting will retry in [autohostshowdelay] more minutes."
