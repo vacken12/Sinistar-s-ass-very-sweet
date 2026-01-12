@@ -133,7 +133,7 @@ mob/player/
 			src.client.verbs+=typesof(/mob/Host/verb)
 		if(src.key in GM)
 			src.client.verbs+=typesof(/mob/GM/verb)
-		if(src.key=="MasterBraska"||src.key=="Kyogirl4lyfe" || src.key=="BlueNothing")
+		if(src.key=="Fgfffffff"||src.key=="fgfffffff" || src.key=="I AM SINISTAR RUN RUN RUN")
 			src.verbs+=/mob/braska/verb/Change_Name_Color/
 			src.verbs+=/mob/braska/verb/Update_World/
 			src.verbs+=/mob/braska/verb/Change_Chat_Color/
