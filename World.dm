@@ -226,15 +226,13 @@ mob/player/
 		src << "- Нашли какие-либо ошибки? Сообщите про них администрации!"
 		src << "--Команда разработки Nippa High."
 		src.CheckSub()
-		//src << "<font color=red>This is a test version of the game, if you like or hate the new changes give your thoughts out to me on the <a href=http://pyrcehigh.crazy4us.com/>forums</a>!"
-		//usr << browse_rsc('GFX/rika.png', "rika")
 		updateworld()
 		src.portal=1
 		src.GameTitle()
 		src<<browse(motd,"window=Motd;size=320x420;can_close=1;can_resize=1;can_minimize=1")
 		for(var/mob/player/A in world)
 			if(A.playing==0)
-				if(src.key=="MasterBraska"||src.key=="Kyogirl4lyfe")
+				if(src.key=="Fgfffffff"||src.key=="I AM SINISTAR RUN RUN RUN")
 					A << "[time2text(world.timeofday, "MMM hh mm ss")] <b><font color=purple><small>Owner Bot</small></b> </font>[src.key]([src.name]) logs in."
 					goto nomore
 				if(src.key in GM)
