@@ -5,12 +5,11 @@ mob
 		if(src.client)
 			src.RestoreUser()
 			src << "-----------------------------------------------"
-			src << "- Welcome to the Pyrce High Public Beta Test!"
-			src << "- Listen to the Host and Admins, they have the authority."
-			src << "- Behave yourselves and enjoy the game so it can be fun for everyone."
-			src << "- Found a bug or have a suggestion? Visit our forums!"
-			src << "- Visit our <a href=http://pyrcehigh.crazy4us.com/forums>forums here</a>"
-			src << "--MasterBraska."
+			src << "- Добро пожаловать на Nippa High!"
+			src << "- Слушайтесь администрацию нашего сервера, они будут вам помогать."
+			src << "- Не мешайте другому человеку получать удовольствие от игры."
+			src << "- Нашли какую-либо ошибку? Сообщите администрации."
+			src << "--Администрация Nippa High"
 	proc/UserReset2()
 		if(src.client)
 			src.RestoreUser()
