@@ -192,7 +192,7 @@ window "Autohost"
 	elem "Autohost"
 		type = MAIN
 		pos = 434,0
-		size = 262x289
+		size = 400x500
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
@@ -208,44 +208,48 @@ window "Autohost"
 		keep-aspect = true
 	elem "button44"
 		type = BUTTON
-		pos = 177,200
-		size = 36x20
+		pos = 56,400
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "  Change Auto-Poll Delay"
 		command = "Hostautopolldelay"
 	elem "autpoll"
 		type = BUTTON
-		pos = 173,152
-		size = 40x20
+		pos = 56,304
+		size = 288x40
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Toggle Auto-Poll"
 		command = "Hosttoggleautopoll"
 	elem "autohostdelay"
 		type = BUTTON
-		pos = 177,104
-		size = 36x20
+		pos = 56,192
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "  Change Auto-Host Delay"
 		command = "Hostautohostdelay"
 	elem "togglehost"
 		type = BUTTON
-		pos = 173,56
-		size = 40x20
+		pos = 56,88
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Toggle Auto-Host"
 		command = "Hosttoggleautohost"
 	elem "label32"
 		type = LABEL
 		pos = 45,8
-		size = 168x24
+		size = 323x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
@@ -256,8 +260,8 @@ window "Autohost"
 		text = "Auto-Host Settings"
 	elem "LAutopolldelay"
 		type = LABEL
-		pos = 50,180
-		size = 163x20
+		pos = 56,368
+		size = 288x24
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
@@ -268,25 +272,10 @@ window "Autohost"
 		saved-params = ""
 		text = "Polling Delay: 60 Seconds"
 		image-mode = stretch
-		align = left
-	elem "label33"
-		type = LABEL
-		pos = 49,200
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		is-disabled = true
-		saved-params = ""
-		text = "  Change Auto-Poll Delay"
-		image-mode = stretch
-		align = left
 	elem "LAutopoll"
 		type = LABEL
-		pos = 50,132
-		size = 163x20
+		pos = 56,264
+		size = 288x32
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
@@ -297,24 +286,10 @@ window "Autohost"
 		saved-params = ""
 		text = "Auto-Polling: Off"
 		image-mode = stretch
-		align = left
-	elem "label31"
-		type = LABEL
-		pos = 49,152
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		is-disabled = true
-		saved-params = ""
-		text = "Toggle Auto-Poll"
-		image-mode = stretch
 	elem "LAutohostdelay"
 		type = LABEL
-		pos = 49,84
-		size = 163x20
+		pos = 56,160
+		size = 288x28
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
@@ -325,25 +300,10 @@ window "Autohost"
 		saved-params = ""
 		text = "Auto-Host Wait: 5 Minutes"
 		image-mode = stretch
-		align = left
-	elem "label30"
-		type = LABEL
-		pos = 48,104
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		is-disabled = true
-		saved-params = ""
-		text = "  Change Auto-Host Delay"
-		image-mode = stretch
-		align = left
 	elem "LAutohost"
 		type = LABEL
-		pos = 49,36
-		size = 163x20
+		pos = 56,56
+		size = 288x28
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
@@ -353,20 +313,6 @@ window "Autohost"
 		border = sunken
 		saved-params = ""
 		text = "Auto-Hosting: Off"
-		image-mode = stretch
-		align = left
-	elem "label29"
-		type = LABEL
-		pos = 48,56
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		is-disabled = true
-		saved-params = ""
-		text = "Toggle Auto-Host"
 		image-mode = stretch
 
 window "DeathNoteWin"
@@ -382,11 +328,6 @@ window "DeathNoteWin"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 537x676
-		outer-pos = 434,0
-		inner-size = 515x620
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "label10"
 		type = LABEL
 		pos = 104,8
@@ -423,7 +364,6 @@ window "DeathNoteWin"
 		font-family = "@SimSun"
 		font-size = 12
 		text-color = #ff0000
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Example time: 12:00 PM, if no time is specified the victim will die in 40 seconds"
@@ -437,7 +377,6 @@ window "DeathNoteWin"
 		font-family = "@SimSun"
 		font-size = 20
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Cause Of Death"
@@ -463,7 +402,6 @@ window "DeathNoteWin"
 		font-family = "@SimSun"
 		font-size = 20
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Name"
@@ -523,11 +461,6 @@ window "Fightmsg"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 356x416
-		outer-pos = 434,0
-		inner-size = 336x396
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "label11"
 		type = LABEL
 		pos = 0,-8
@@ -605,11 +538,11 @@ window "Functions"
 	elem "Functions"
 		type = MAIN
 		pos = 434,0
-		size = 262x289
+		size = 400x500
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;is-minimized;is-maximized"
 		title = "Functions"
 		titlebar = false
 		statusbar = false
@@ -618,274 +551,178 @@ window "Functions"
 		can-resize = false
 		is-pane = true
 		image-mode = center
-		outer-size = 282x309
-		outer-pos = 434,0
-		inner-size = 262x289
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button21"
 		type = BUTTON
-		pos = 168,266
-		size = 40x20
+		pos = 64,448
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Toggle On/Off"
 		command = "Hostfunctionclassic"
 	elem "LCClassic"
 		type = LABEL
-		pos = 48,246
+		pos = 125,424
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Classic Characters Mode: Off"
 		image-mode = stretch
 		align = left
-	elem "label6"
-		type = LABEL
-		pos = 48,266
-		size = 163x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Toggle On/Off"
-		image-mode = stretch
 	elem "button54"
 		type = BUTTON
-		pos = 169,222
-		size = 40x20
+		pos = 64,372
+		size = 288x44
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Uniforms"
 		command = "Hostfunctionuniform"
 	elem "LUni"
 		type = LABEL
-		pos = 49,202
+		pos = 128,344
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Uniform Color: Blue"
 		image-mode = stretch
 		align = left
-	elem "label34"
-		type = LABEL
-		pos = 49,222
-		size = 163x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Uniforms"
-		image-mode = stretch
 	elem "button53"
 		type = BUTTON
-		pos = 169,182
-		size = 40x20
+		pos = 64,288
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Escape Settings"
 		command = "Hostfunctionescape"
 	elem "button52"
 		type = BUTTON
-		pos = 172,138
-		size = 40x20
+		pos = 64,200
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Tapes Settings"
 		command = "Hostfunctiontapes"
 	elem "button51"
 		type = BUTTON
-		pos = 171,98
-		size = 40x20
+		pos = 64,120
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Computer Settings"
 		command = "Hostfunctioncpu"
 	elem "button50"
 		type = BUTTON
-		pos = 171,50
-		size = 40x20
+		pos = 64,48
+		size = 288x48
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Multikey Settings"
 		command = "Hostfunctionmultikey"
 	elem "label32"
 		type = LABEL
-		pos = 43,8
+		pos = 112,0
 		size = 168x24
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 13
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Functions"
 	elem "LEscape"
 		type = LABEL
-		pos = 49,162
+		pos = 133,260
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Allow Escaping: On"
 		image-mode = stretch
 		align = left
-	elem "label28"
-		type = LABEL
-		pos = 49,182
-		size = 163x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Escape Settings"
-		image-mode = stretch
 	elem "LTapes"
 		type = LABEL
-		pos = 49,120
+		pos = 128,172
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Tapes Functionality: On"
 		image-mode = stretch
 		align = left
-	elem "label29"
-		type = LABEL
-		pos = 48,140
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Tapes Settings"
-		image-mode = stretch
 	elem "LCPU"
 		type = LABEL
-		pos = 48,78
+		pos = 125,96
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Computer Functionality: On"
 		image-mode = stretch
 		align = left
-	elem "label25"
-		type = LABEL
-		pos = 47,98
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Computer Settings"
-		image-mode = stretch
 	elem "LMultikey"
 		type = LABEL
-		pos = 48,32
+		pos = 125,28
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Allow Multi-keying: Off"
 		image-mode = stretch
 		align = left
-	elem "label24"
-		type = LABEL
-		pos = 47,52
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Multikey Settings"
-		image-mode = stretch
 
 window "GMode"
 	elem "GMode"
 		type = MAIN
 		pos = 434,0
-		size = 262x377
+		size = 400x500
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;is-minimized;is-maximized"
 		title = "Round Settings"
 		titlebar = false
 		statusbar = false
@@ -894,194 +731,142 @@ window "GMode"
 		can-resize = false
 		is-pane = true
 		image-mode = center
-		outer-size = 282x397
-		outer-pos = 434,0
-		inner-size = 262x377
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button56"
 		type = BUTTON
-		pos = 167,344
-		size = 44x20
+		pos = 48,464
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Hoard Delay"
 		command = "Hostchangehoarddelay"
 	elem "button55"
 		type = BUTTON
-		pos = 167,296
-		size = 44x20
+		pos = 48,410
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Attack Delay"
 		command = "Hostchangeattackdelay"
 	elem "LHoard"
 		type = LABEL
-		pos = 48,324
+		pos = 117,440
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Hoard Delay: Off"
 		image-mode = stretch
 		align = left
-	elem "label37"
-		type = LABEL
-		pos = 47,344
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Hoard Delay"
-		image-mode = stretch
 	elem "LAttack"
 		type = LABEL
-		pos = 48,276
+		pos = 117,388
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Attack Delay: Off"
 		image-mode = stretch
 		align = left
-	elem "label35"
-		type = LABEL
-		pos = 47,296
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Attack Delay"
-		image-mode = stretch
 	elem "button49"
 		type = BUTTON
-		pos = 168,248
-		size = 44x20
+		pos = 48,352
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Item Spawn Rate"
 		command = "Hostchangespawnrate"
 	elem "button48"
 		type = BUTTON
-		pos = 168,200
-		size = 44x20
+		pos = 48,296
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Lethality"
 		command = "Hostchangelethality"
 	elem "button47"
 		type = BUTTON
-		pos = 168,152
-		size = 44x20
+		pos = 48,234
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Game Hours"
 		command = "Hostchangehour"
 	elem "button46"
 		type = BUTTON
-		pos = 168,104
-		size = 44x20
+		pos = 48,170
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Choose Game Mode"
 		command = "Hostchangemode"
 	elem "button45"
 		type = BUTTON
-		pos = 168,56
-		size = 44x20
+		pos = 48,104
+		size = 288x30
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 10
 		saved-params = "is-checked"
-		text = ""
+		text = "Change Map"
 		command = "Hostchangemap"
 	elem "label32"
 		type = LABEL
-		pos = 44,8
-		size = 168x24
+		pos = 60,16
+		size = 260x56
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 13
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Round Settings"
 	elem "LSpawn"
 		type = LABEL
-		pos = 49,228
-		size = 163x20
+		pos = 80,328
+		size = 232x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Item Spawn Rate: Normal"
 		image-mode = stretch
 		align = left
-	elem "label27"
-		type = LABEL
-		pos = 48,248
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Spawn Rate"
-		image-mode = stretch
 	elem "LLethality"
 		type = LABEL
-		pos = 49,180
+		pos = 109,272
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
@@ -1090,14 +875,13 @@ window "GMode"
 		align = left
 	elem "LHours"
 		type = LABEL
-		pos = 49,132
+		pos = 112,208
 		size = 163x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
@@ -1106,86 +890,28 @@ window "GMode"
 		align = left
 	elem "LMap"
 		type = LABEL
-		pos = 49,36
-		size = 163x20
+		pos = 80,80
+		size = 211x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
 		text = "Current Map: Default"
 		image-mode = stretch
 		align = left
-	elem "label26"
-		type = LABEL
-		pos = 48,200
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Lethality"
-		image-mode = stretch
-	elem "BHo"
-		type = LABEL
-		pos = 48,152
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Game Hours"
-		image-mode = stretch
-	elem "label24"
-		type = LABEL
-		pos = 48,56
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Change Map"
-		image-mode = stretch
-	elem "label23"
-		type = LABEL
-		pos = 48,104
-		size = 164x22
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Comic Sans MS"
-		font-size = 9
-		text-color = #ffffff
-		background-color = none
-		is-disabled = true
-		saved-params = ""
-		text = "Choose Game Mode"
-		image-mode = stretch
 	elem "LMode"
 		type = LABEL
-		pos = 49,84
-		size = 163x20
+		pos = 93,144
+		size = 187x20
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		font-family = "Comic Sans MS"
 		font-size = 8
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		border = sunken
 		saved-params = ""
@@ -1209,11 +935,6 @@ window "Misc"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 407x479
-		outer-pos = 434,0
-		inner-size = 387x459
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button43"
 		type = BUTTON
 		pos = 96,364
@@ -1310,23 +1031,18 @@ window "PlayerConfig"
 		size = 387x459
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = "pos;is-minimized;is-maximized"
 		title = "Client Settings"
 		statusbar = false
 		can-resize = false
-		outer-size = 409x515
-		outer-pos = 434,0
-		inner-size = 387x459
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "tab3"
 		type = TAB
 		pos = 0,0
 		size = 387x459
 		anchor1 = 0,0
 		anchor2 = 100,100
+		font-size = 10
 		text-color = #8080ff
 		background-color = #000000
 		saved-params = ""
@@ -1348,31 +1064,27 @@ window "Profileconfig"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 407x479
-		outer-pos = 434,0
-		inner-size = 387x459
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button6"
 		type = BUTTON
-		pos = 0,48
-		size = 60x16
+		pos = 0,40
+		size = 96x24
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-size = 8
 		saved-params = "is-checked"
 		text = "Save"
 		command = "SaveProf"
 	elem "label13"
 		type = LABEL
 		pos = 60,8
-		size = 120x20
+		size = 292x32
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		font-size = 10
 		text-color = #ffffff
 		background-color = #000000
 		saved-params = ""
-		text = "Character Desc."
+		text = "Character Desc. (Flavor Text)"
 	elem "charprof"
 		type = INPUT
 		pos = 0,64
@@ -1399,11 +1111,6 @@ window "TheMainWin"
 		title = "Dream Seeker"
 		macro = "macro"
 		menu = "menu"
-		outer-size = 1808x945
-		outer-pos = 112,0
-		inner-size = 1786x834
-		inner-pos = 11,75
-		screen-size = 1920x1128
 	elem "input"
 		type = INPUT
 		pos = 0,816
@@ -1419,10 +1126,10 @@ window "TheMainWin"
 		saved-params = ""
 	elem "mainwin"
 		type = CHILD
-		pos = -2,-16
+		pos = 0,-16
 		size = 1786x831
 		anchor1 = 0,0
-		anchor2 = 100,95
+		anchor2 = 100,98
 		background-color = #002080
 		saved-params = "splitter"
 		left = "maped"
@@ -1459,11 +1166,6 @@ window "Volume"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 407x479
-		outer-pos = 434,0
-		inner-size = 387x459
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "label12"
 		type = LABEL
 		pos = 60,8
@@ -1526,18 +1228,12 @@ window "about"
 		saved-params = "pos;is-minimized;is-maximized"
 		statusbar = false
 		can-resize = false
-		outer-size = 374x469
-		outer-pos = 434,0
-		inner-size = 352x413
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "label43"
 		type = LABEL
 		pos = 0,0
 		size = 135x135
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = ""
@@ -1549,7 +1245,6 @@ window "about"
 		anchor2 = -1,-1
 		font-family = "@SimSun"
 		font-size = 17
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Pyrce High \ncreated by: \nMasterBraska.\n\nHost:\nfpfffffff\n\nAdmins:\nIlmir037"
@@ -1561,7 +1256,6 @@ window "browserpane"
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "browserpane"
 		titlebar = false
@@ -1570,10 +1264,6 @@ window "browserpane"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 660x500
-		outer-pos = 434,0
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "browser1"
 		type = BROWSER
 		pos = 0,0
@@ -1600,7 +1290,6 @@ window "charcreation"
 		title = "Character Customization"
 		statusbar = false
 		can-minimize = false
-		can-resize = false
 		image-mode = center
 		outer-size = 822x856
 		outer-pos = 434,0
@@ -1611,8 +1300,8 @@ window "charcreation"
 		type = LABEL
 		pos = 344,648
 		size = 300x80
-		anchor1 = -1,-1
-		anchor2 = -1,-1
+		anchor1 = 43,81
+		anchor2 = 81,91
 		font-size = 10
 		text-color = #ffffff
 		background-color = none
@@ -1710,8 +1399,8 @@ window "charcreation"
 		type = BUTTON
 		pos = 616,728
 		size = 184x76
-		anchor1 = -1,-1
-		anchor2 = -1,-1
+		anchor1 = 77,91
+		anchor2 = 100,100
 		font-family = "Comic Sans MS"
 		font-size = 8
 		background-color = #970000
@@ -1724,8 +1413,8 @@ window "charcreation"
 		type = BUTTON
 		pos = 192,728
 		size = 184x76
-		anchor1 = -1,-1
-		anchor2 = -1,-1
+		anchor1 = 24,91
+		anchor2 = 47,100
 		font-family = "Comic Sans MS"
 		font-size = 8
 		background-color = none
@@ -1762,15 +1451,16 @@ window "charcreation"
 		type = GRID
 		pos = 0,104
 		size = 800x160
-		anchor1 = -1,-1
-		anchor2 = -1,-1
+		anchor1 = 0,13
+		anchor2 = 100,33
 		font-size = 100
 		background-color = #000000
 		border = sunken
 		drop-zone = false
 		saved-params = ""
-		cells = 2x2
+		cells = 4x2
 		current-cell = 2,2
+		show-lines = vertical
 		show-names = false
 		line-color = #000000
 		highlight-color = #000000
@@ -1834,6 +1524,7 @@ window "chatterpane"
 		size = 382x459
 		anchor1 = 0,0
 		anchor2 = 100,100
+		font-size = 10
 		text-color = #8080ff
 		background-color = #000000
 		saved-params = ""
@@ -1847,18 +1538,12 @@ window "deathnote"
 		size = 300x477
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Death Note"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 322x533
-		outer-pos = 434,0
-		inner-size = 300x477
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "button1"
 		type = BUTTON
 		pos = 0,0
@@ -1917,25 +1602,20 @@ window "hostopt"
 	elem "hostopt"
 		type = MAIN
 		pos = 434,0
-		size = 300x400
+		size = 400x500
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
 		is-visible = false
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;is-minimized;is-maximized"
 		title = "Host Options"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 322x456
-		outer-pos = 434,0
-		inner-size = 300x400
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "tab1"
 		type = TAB
 		pos = 0,0
-		size = 300x400
+		size = 400x500
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = "Comic Sans MS"
@@ -1961,11 +1641,6 @@ window "ignorelist"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 220x244
-		outer-pos = 434,0
-		inner-size = 200x224
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button69"
 		type = BUTTON
 		pos = 144,0
@@ -1973,7 +1648,6 @@ window "ignorelist"
 		anchor1 = 100,0
 		anchor2 = -1,-1
 		text-color = #ffffff
-		background-color = none
 		border = line
 		saved-params = "is-checked"
 		text = "Rem"
@@ -1985,7 +1659,6 @@ window "ignorelist"
 		anchor1 = 0,0
 		anchor2 = -1,-1
 		text-color = #ffffff
-		background-color = none
 		border = line
 		saved-params = "is-checked"
 		text = "Add"
@@ -2037,11 +1710,6 @@ window "infoer"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 326x300
-		outer-pos = 434,0
-		inner-size = 306x280
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "infopaner"
 		type = INFO
 		pos = 0,0
@@ -2049,7 +1717,7 @@ window "infoer"
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = "Arial"
-		font-size = 8
+		font-size = 10
 		text-color = #ffffff
 		background-color = #000000
 		saved-params = ""
@@ -2057,6 +1725,7 @@ window "infoer"
 		tab-text-color = #0080c0
 		tab-background-color = #000000
 		tab-font-family = "Franklin Gothic Medium"
+		tab-font-size = 10
 
 window "keypad"
 	elem "keypad"
@@ -2073,11 +1742,6 @@ window "keypad"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 478x643
-		outer-pos = 434,0
-		inner-size = 456x587
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "padout"
 		type = OUTPUT
 		pos = 0,464
@@ -2204,7 +1868,6 @@ window "maped"
 		size = 544x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -2212,11 +1875,6 @@ window "maped"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 564x500
-		outer-pos = 434,0
-		inner-size = 544x480
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "mapper"
 		type = CHILD
 		pos = 0,0
@@ -2227,7 +1885,7 @@ window "maped"
 		saved-params = "splitter"
 		left = "panedmap"
 		is-vert = false
-		splitter = 90
+		splitter = 95
 		lock = left
 
 window "outputpane"
@@ -2246,15 +1904,10 @@ window "outputpane"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 660x486
-		outer-pos = 434,0
-		inner-size = 640x466
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "output1"
 		type = OUTPUT
 		pos = 0,0
-		size = 640x466
+		size = 640x458
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = "Franklin Gothic Medium"
@@ -2282,11 +1935,6 @@ window "panedmap"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 592x440
-		outer-pos = 434,0
-		inner-size = 572x420
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "Themap"
 		type = MAP
 		pos = 0,0
@@ -2314,11 +1962,6 @@ window "pdawin"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 431x303
-		outer-pos = 434,0
-		inner-size = 411x283
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button42"
 		type = BUTTON
 		pos = 33,178
@@ -2548,7 +2191,7 @@ window "pdawin"
 window "playerprofile"
 	elem "playerprofile"
 		type = MAIN
-		pos = 577,293
+		pos = 434,0
 		size = 717x465
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -2559,11 +2202,6 @@ window "playerprofile"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 739x521
-		outer-pos = 577,293
-		inner-size = 717x465
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "label22"
 		type = LABEL
 		pos = 200,21
@@ -2571,7 +2209,6 @@ window "playerprofile"
 		anchor1 = 28,5
 		anchor2 = 54,9
 		text-color = #ff0000
-		background-color = none
 		is-transparent = true
 		border = line
 		saved-params = ""
@@ -2584,7 +2221,6 @@ window "playerprofile"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Perfect"
@@ -2596,7 +2232,6 @@ window "playerprofile"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #ff0000
-		background-color = none
 		is-transparent = true
 		border = line
 		saved-params = ""
@@ -2622,7 +2257,6 @@ window "playerprofile"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #ff0000
-		background-color = none
 		is-transparent = true
 		border = line
 		saved-params = ""
@@ -2635,7 +2269,6 @@ window "playerprofile"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Unknown"
@@ -2646,6 +2279,7 @@ window "playerprofile"
 		size = 717x424
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		font-size = 10
 		text-color = #ffffff
 		background-color = #000000
 		border = sunken
@@ -2666,24 +2300,23 @@ window "rightpanel"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 792x416
-		outer-pos = 434,0
-		inner-size = 772x396
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "label1"
 		type = LABEL
-		pos = 0,-4
-		size = 680x76
+		pos = 8,8
+		size = 680x36
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
+		font-family = "@SimSun"
+		font-size = 10
+		text-color = #a10000
+		background-color = #000000
 		saved-params = ""
-		text = ""
+		text = "Pyrce High"
 		image-mode = stretch
+		align = left
 	elem "textbutt"
 		type = BUTTON
-		pos = 288,8
+		pos = 288,16
 		size = 96x24
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -2699,7 +2332,7 @@ window "rightpanel"
 		button-type = pushbox
 	elem "brwsr"
 		type = BUTTON
-		pos = 384,8
+		pos = 384,16
 		size = 96x24
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -2714,7 +2347,7 @@ window "rightpanel"
 		button-type = pushbox
 	elem "infob"
 		type = BUTTON
-		pos = 192,8
+		pos = 192,16
 		size = 96x24
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -2731,13 +2364,13 @@ window "rightpanel"
 		button-type = pushbox
 	elem "panelright"
 		type = CHILD
-		pos = 0,32
+		pos = 0,40
 		size = 772x364
-		anchor1 = 0,14
+		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #002080
 		saved-params = "splitter"
-		right = "thepanes"
+		left = "thepanes"
 		is-vert = false
 		splitter = 65
 		lock = right
@@ -2755,11 +2388,6 @@ window "skinmodify"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 344x707
-		outer-pos = 434,0
-		inner-size = 322x651
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "button67"
 		type = BUTTON
 		pos = 32,584
@@ -2834,7 +2462,6 @@ window "skinmodify"
 		anchor2 = -1,-1
 		font-size = 14
 		text-color = #ffffff
-		background-color = none
 		is-transparent = true
 		saved-params = ""
 		text = "Modify your skins color, Currently only in Alpha stages. This will advance more later. This ugly GUI included."
@@ -2844,22 +2471,17 @@ window "switchbox"
 	elem "switchbox"
 		type = MAIN
 		pos = 434,0
-		size = 333x439
+		size = 333x607
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
 		is-visible = false
 		saved-params = "pos;is-minimized;is-maximized"
 		title = "Circuit Box"
-		outer-size = 355x520
-		outer-pos = 434,0
-		inner-size = 333x439
-		inner-pos = 11,45
-		screen-size = 1920x1128
 	elem "fboxgrid"
 		type = GRID
-		pos = 0,27
-		size = 333x412
+		pos = 0,37
+		size = 333x570
 		anchor1 = 0,6
 		anchor2 = 100,100
 		font-family = "Franklin Gothic Medium"
@@ -2902,7 +2524,6 @@ window "thepanes"
 		size = 640x448
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -2910,11 +2531,6 @@ window "thepanes"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 660x468
-		outer-pos = 434,0
-		inner-size = 640x448
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "paner"
 		type = CHILD
 		pos = 0,0
@@ -2938,7 +2554,7 @@ window "votingsys"
 		anchor2 = -1,-1
 		background-color = #000000
 		is-visible = false
-		saved-params = "pos;is-minimized;is-maximized"
+		saved-params = "pos"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
@@ -3055,105 +2671,26 @@ window "votingsys"
 		command = "votenormal"
 		is-flat = true
 
-window "watcher"
-	elem "watcher"
-		type = MAIN
-		pos = 434,0
-		size = 368x48
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		background-color = none
-		saved-params = "pos;size;is-minimized;is-maximized"
-		titlebar = false
-		statusbar = false
-		can-close = false
-		can-minimize = false
-		can-resize = false
-		is-pane = true
-		outer-size = 388x68
-		outer-pos = 434,0
-		inner-size = 368x48
-		inner-pos = 10,10
-		screen-size = 1920x1128
-	elem "label2"
-		type = LABEL
-		pos = 0,0
-		size = 368x48
-		anchor1 = 0,0
-		anchor2 = 100,100
-		text-color = #400040
-		background-color = #000000
-		saved-params = ""
-		text = ""
-		image-mode = tile
-	elem "button7"
-		type = BUTTON
-		pos = 72,0
-		size = 80x47
-		anchor1 = 20,0
-		anchor2 = 41,98
-		font-family = "Franklin Gothic Medium"
-		text-color = #ffffff
-		background-color = #808080
-		border = line
-		saved-params = "is-checked"
-		text = "Watch a Player"
-		command = "First-Person-View"
-		is-flat = true
-	elem "wchat"
-		type = BUTTON
-		pos = 280,0
-		size = 88x40
-		anchor1 = 83,0
-		anchor2 = 100,100
-		font-family = "Franklin Gothic Medium"
-		text-color = #ffffff
-		background-color = #000000
-		saved-params = "is-checked"
-		text = "See Watcher Chat"
-		command = "togglewatcherchat"
-		is-checked = true
-		button-type = checkbox
-	elem "button5"
-		type = BUTTON
-		pos = 0,0
-		size = 72x47
-		anchor1 = 0,0
-		anchor2 = 20,98
-		font-family = "Franklin Gothic Medium"
-		text-color = #ffffff
-		background-color = #808080
-		border = line
-		saved-params = "is-checked"
-		text = "Jump to Player"
-		command = "Jump-To-Player"
-		is-flat = true
-
 window "watcherwords"
 	elem "watcherwords"
 		type = MAIN
 		pos = 434,0
-		size = 112x16
+		size = 112x32
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
 		is-visible = false
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
 		can-close = false
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 132x36
-		outer-pos = 434,0
-		inner-size = 112x16
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button29"
 		type = BUTTON
 		pos = 56,0
-		size = 56x16
+		size = 56x32
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #ffffff
@@ -3167,7 +2704,7 @@ window "watcherwords"
 	elem "button17"
 		type = BUTTON
 		pos = 0,0
-		size = 56x16
+		size = 56x32
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #ffffff
@@ -3220,11 +2757,6 @@ window "words"
 		can-resize = false
 		is-pane = true
 		transparent-color = #000000
-		outer-size = 244x52
-		outer-pos = 434,0
-		inner-size = 224x32
-		inner-pos = 10,10
-		screen-size = 1920x1128
 	elem "button31"
 		type = BUTTON
 		pos = 168,0
