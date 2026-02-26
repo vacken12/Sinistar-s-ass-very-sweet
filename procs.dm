@@ -8,57 +8,7 @@ mob/corpse
 	ai=1
 	koed=1
 	layer=OBJ_LAYER
-	verb/Push(var/mob/m in get_step(usr,usr.dir))
-		set src in oview(1)
-		if(usr.playing==0)return
-		if(usr.shinigami==1)return
-		if(usr.isGhost==1)return
-		if(usr.beatrice==1&&usr.icon_state=="butterfly")return
-		if(get_step(src,usr))
-			step(src,usr.dir,"Speed=0")
-			range(6,usr) << "[usr] shoves the [src]"
-	verb/Pull()
-		set src in oview(1)
-		set name="Drag / Stop"
-		if(usr.playing==0)return
-		if(usr.shinigami==1)return
-		if(usr.beatrice==1&&usr.icon_state=="butterfly")return
-		if(usr.pulling&&usr.pulling==src)
-			usr.pulling=null
-			usr << "You stop dragging the [src]"
-			src.pulled=0
-			return
-		else if(usr.pulling)
-			for(var/mob/M in oview(3,usr))
-				if(M.pulling==src)
-					var/rander=rand(1,3)
-					if(rander==1)
-						M.pulling=null
-						src.pulled=1
-						M << "[usr] pulls the [src] away from you."
-					else
-						usr << "You failed to pull the [src] away from [M]."
-						M << "[usr] tries to pull the [src] away from you"
-						return
-			usr.pulling=src
-			usr << "You begin dragging the [src]"
-			src.pulled=1
-			return
-		else
-			for(var/mob/M in oview(3,usr))
-				if(M.pulling==src)
-					var/rander=rand(1,3)
-					if(rander==1)
-						M.pulling=null
-						M << "[usr] pulls the [src] away from you."
-						src.pulled=1
-					else
-						usr << "You failed to pull the [src] away from [M]."
-						M << "[usr] tries to pull the [src] away from you"
-						return
-			usr.pulling=src
-			usr << "You begin dragging the [src]"
-			src.pulled=1
+	
 	verb/Search_Body()
 		///set name="Drag / Stop"
 		set src in oview(1)
@@ -1103,7 +1053,7 @@ mob/owner/verb
 			I.overlays+=C
 			I.chatavatar='speech.dmi'
 			for(var/mob/n in world)
-				if(n.key in Owner)
+				if(n.key in Owner&&(AntagNotices==1))
 					n << "<font color=red>Admin Notice: [I]([I.key]) is the Ghost"
 		else if(M=="Killer")
 			var/obj/weapons/Knife/K=new/obj/weapons/Knife
@@ -1112,7 +1062,7 @@ mob/owner/verb
 			I.contents+=K
 			I << "<b>You are the killer!</b> ... But don't tell anyone. You've killed one of the faculty members and left her body in the main courtyard, heh. Your role in this game is to kill every other player, while surviving yourself. Therefore, it isn't a great idea to tell everyone that you're the killer. Use your wits and various tools around the school to help in this goal."
 			for(var/mob/n in world)
-				if(n.key in Owner)
+				if(n.key in Owner&&(AntagNotices==1))
 					n << "<font color=red>Admin Notice: [I]([I.key]) is the Killer"
 		else if(M=="Doppelganger")
 			for(var/mob/corpse/n in world)
@@ -1123,7 +1073,7 @@ mob/owner/verb
 					n.currentrole=null
 			I.currentrole="The Doppelganger"
 			I.hp=200
-		else if (M=="Kira")
+		else if (M=="Kira"&&(AntagNotices==1))
 			I << " <b>You are Kira</b> ... You're not sure where you obtained this book but you know that it can kill with a name and face. You have killed the teacher with this magicial notebook."
 			for(var/mob/n in world)
 				if(n.key in Owner)
@@ -1163,17 +1113,17 @@ mob/owner/verb
 		//	ovr+=A
 		//var/N=input(usr,"Which overlay do you wish to remove?") in ovr
 		//if(N)M.overlays-=N
-	Summon_Ramiel()
+	Summon_Blue()
 		set category = "Admin"
-		var/n=alert(usr,"You're going to summon Ramiel, it is CURRENTLY IN TEST MODE, so do not over use this, and BARELY ever use it. At any rate, Spawn Ramiel?","","Yes","No")
+		var/n=alert(usr,"You're going to summon Blue, it is CURRENTLY IN TEST MODE, so do not over use this, and BARELY ever use it. At any rate, Spawn Blue?","","Yes","No")
 		if(n=="Yes")
 			if(GameOn==0)return
-			world << "<font size=3><b><font color=red>Warning!</font></b> An Angel has appeared, entering Ramiel test mode."
+			world << "<font size=3><b><font color=red>Warning!</font></b> An AO has appeared, entering Blue test mode."
 			world << "<b>The ceiling lights explode!</b>"
 			for(var/obj/Lights/O in world)
 				O.luminosity=0
 			world << sound(null)
-			world << sound('angels.mid',1)
+			world << sound('battle3.ogg',1)
 			var/mob/ramiel/M=new
 			M.hp=400
 			M.stamina=10000
@@ -1181,6 +1131,16 @@ mob/owner/verb
 			//for(var/area/N in view(M.loc))
 			//	N.luminosity=0
 			M.RamielAI()
+	AntagNotices()
+		set category = "Admin"
+		if(AntagNotices==1)
+			AntagNotices=0
+			if(usr.key in Owner)
+				for(var/mob/A in world)A << "Antag Notices has been disabled!"
+		else
+			AntagNotices=1
+			if(usr.key in Owner)
+				for(var/mob/A in world)A << "Antag Notices has been enabled!"
 	Admin_Announce(T as text)
 		set category="Admin"
 		if(T=="")return

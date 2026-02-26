@@ -860,6 +860,75 @@ obj/Misc
 				if(usr.stamina>99)usr.stamina=100
 				usr.updatesp()
 				del src
+	Apple
+		icon='apple.dmi'
+		idesc="Juicy, red apple! It contains many vitamins."
+		verb
+			Pick_Up()
+				set src in oview(1)
+				if(usr.playing==0)return
+				Move(usr,src)
+			Drop()
+				set src in usr
+				set category = null
+				if(usr.playing==0)return
+				//if(src==usr.equipped)return
+				Move(usr.loc,src)
+			Eat()
+				set src in usr
+				set category = null
+				if(usr.playing==0)return
+				usr << "You eat an apple, feeling much more energized."
+				usr.stamina+=rand(10,30)
+				if(usr.stamina>99)usr.stamina=100
+				usr.updatesp()
+				del src
+	Banana
+		icon='banana.dmi'
+		idesc="A healthy bunch of bananas. It looks delicious."
+		verb
+			Pick_Up()
+				set src in oview(1)
+				if(usr.playing==0)return
+				Move(usr,src)
+			Drop()
+				set src in usr
+				set category = null
+				if(usr.playing==0)return
+				//if(src==usr.equipped)return
+				Move(usr.loc,src)
+			Eat()
+				set src in usr
+				set category = null
+				if(usr.playing==0)return
+				usr << "You eat a banana, feeling much more energized."
+				usr.stamina+=rand(10,30)
+				if(usr.stamina>99)usr.stamina=100
+				usr.updatesp()
+				del src
+	Orange
+		icon='orange.dmi'
+		idesc="A delicious orange. It contains a lot of vitamin C!"
+		verb
+			Pick_Up()
+				set src in oview(1)
+				if(usr.playing==0)return
+				Move(usr,src)
+			Drop()
+				set src in usr
+				set category = null
+				if(usr.playing==0)return
+				//if(src==usr.equipped)return
+				Move(usr.loc,src)
+			Eat()
+				set src in usr
+				set category = null
+				if(usr.playing==0)return
+				usr << "You eat an orange, feeling much more energized."
+				usr.stamina+=rand(10,30)
+				if(usr.stamina>99)usr.stamina=100
+				usr.updatesp()
+				del src
 	Yen
 		icon='money.dmi'
 		curamount=25
@@ -2239,6 +2308,15 @@ proc
 			if(rander3==1)
 				var/obj/Misc/Syringe/I = new/obj/Misc/Syringe
 				O.contents+=I
+			if(rander3==2)
+				var/obj/Misc/Apple/I = new/obj/Misc/Apple
+				O.contents+=I
+			if(rander3==3)
+				var/obj/Misc/Banana/I = new/obj/Misc/Banana
+				O.contents+=I
+			if(rander3==4)
+				var/obj/Misc/Orange/I = new/obj/Misc/Orange
+				O.contents+=I
 
 		for(var/obj/Containers/School_Desk/O in world)
 			var/rander=rand(1,knifespawn)
@@ -2270,6 +2348,15 @@ proc
 				O.contents+=I
 			if(rander7==rand(1,5))
 				var/obj/Misc/Smoke_Bomb/I = new/obj/Misc/Smoke_Bomb
+				O.contents+=I
+			if(rander6==1)
+				var/obj/Misc/Apple/I = new/obj/Misc/Apple
+				O.contents+=I
+			if(rander6==2)
+				var/obj/Misc/Banana/I = new/obj/Misc/Banana
+				O.contents+=I
+			if(rander6==3)
+				var/obj/Misc/Orange/I = new/obj/Misc/Orange
 				O.contents+=I
 		var/obj/J=pick(Containers4storage)
 		var/obj/Misc/Door_Code/Kk = new/obj/Misc/Door_Code
@@ -2338,7 +2425,7 @@ proc
 				var/obj/Misc/Mild_Sedetive/I = new/obj/Misc/Mild_Sedetive
 				O.contents+=I
 		:noitems
-		if(mapp=="Default"||mapp=="Default 2")
+		if(mapp=="Default"||mapp=="Default 2"||mapp=="WorldV")
 			for(var/obj/Containers_Stationed/Key_Locker/O in world)
 				var/obj/key/I=new
 				I.tag="office"
@@ -2624,11 +2711,11 @@ obj/
 		Girls
 			icon_state="girls"
 		Girls2
-			icon_state="girls2"
+			icon_state="kitch"
 		Boys
 			icon_state="boys"
 		Boys2
-			icon_state="boys2"
+			icon_state="kitch2"
 
 	Posters
 		Courtyard
@@ -3253,12 +3340,13 @@ mob/Bump(atom/A)
 		var/obj/O=src.pulling
 		O.loc=src.loc
 	..()
-mob/var/move_speed=2
+mob/var/move_speed=6 // player speed
+mob/var/run_speed=3 //
 mob/Move()
 	if(src.barrier==1)return 0
 	if(src.playing==1)
-		if("[rand(1,9)]"=="[rand(1,14)]"&&src.invisibility==0)
-			soundmob(src, 10, 'footsteps.wav', TRUE)
+		if(src.invisibility==0)
+			range(usr,8) << sound('footsteps.wav')
 		if(src.koed==0)
 			for(var/mob/A in view())
 				if(A.pulling==src)
@@ -3313,18 +3401,21 @@ mob/Move()
 			var/image/o=new/obj/bloodstep
 			o.loc=src.loc
 			o.dir=src.dir
-	if(src.running&&src.move_speed>3)
-		src.frozen=1
-		spawn(src.move_speed)src.frozen=0
-	if(!src.running&&src.zombie==0)
-		src.frozen=1
-		spawn(src.move_speed)src.frozen=0
-	else if(src.zombie==1)
-		src.frozen=1
-		spawn(3)src.frozen=0
-	else
-		src.stamina-=1
-	return ..()
+		if(src.running==1)
+			src.frozen=1
+			spawn(src.run_speed)src.frozen=0
+		else 	
+			src.frozen=1
+			spawn(src.move_speed)src.frozen=0
+		if(!src.running&&src.zombie==0)
+			src.frozen=1
+			spawn(src.move_speed)src.frozen=0
+		else if(src.zombie==1)
+			src.frozen=1
+			spawn(6)src.frozen=0
+		else
+			src.stamina-=1
+		return ..()
 obj/var/bloodweapon=0
 proc
 	WeaponEquip(var/mob/A,var/obj/weapons/I)

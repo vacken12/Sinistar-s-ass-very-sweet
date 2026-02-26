@@ -40,13 +40,13 @@ proc
 
 var/d111=0
 world
-	hub ="MasterBraska.PyrceHigh"
+	hub ="Exadv1.spacestation13"
 	name="Nippa High"
-	hub_password="qoqNk8OEVAz096Uy"
+	hub_password="kMZy3U5jJHSiBQjr"
 	version=60
-	status={"<b>Version:</b> 2.5.7c]<BR>\[<BR><b>Game Map:</b> Default<BR><b>Game Mode:</b> Normal"}
+	status={"<b>Version:</b> Mii High]<BR>\[<BR><b>Game Map:</b> Default<BR><b>Game Mode:</b> Normal"}
 	mob=/mob/player
-	fps=60
+	fps=70
 	view=8
 	//tick_lag=1.5
 	New()
@@ -483,6 +483,7 @@ Beatrice_Buttons
 								return
 		//	usr << "This corpse cannot be resurrected."
 
+var/CharacterSetup[]=list(new/Buttons/CharacterSetup)
 var/join[]=list(new/Buttons/Join)
 var/join2[]=list(new/Buttons/Join2)
 var/watch[]=list(new/Buttons/Watch)
@@ -508,6 +509,13 @@ Buttons
 ///	proc/Interact()
 //	Click()
 //		src.Interact()
+	CharacterSetup
+		icon_state="ciel"
+		name="Character Setup"
+		Click()
+			usr.custcharacter()
+			if(usr.joined==0)return
+			if(GameOn==1)return
 	Join
 		icon_state="join"
 		name="Join Game!"
@@ -793,10 +801,10 @@ mob/Stat()
 				HealthStatus="Deeply Wounded!"
 			if(usr.hp<21&&usr.hp>10)
 				HealthStatus="You're losing blood! You feel slower."
-				usr.move_speed=2
+				usr.move_speed=7
 			if(usr.hp<11&&usr.hp>0)
 				HealthStatus="DANGER, SEEK MEDICAL ATTENTION! You feel a lot slower."
-				usr.move_speed=3
+				usr.move_speed=9
 			stat("Stamina:","[usr.stamina]%")
 			stat("Health Status:","[HealthStatus]")
 			if(usr.currentrole=="The Doppelganger"&&usr.playing==1)
@@ -852,7 +860,7 @@ mob/Stat()
 				stat("Game Mode:","Secret")
 			else
 				stat("Game Mode:","[gamemode]")
-			if(mapp=="Default"||mapp=="Default 2")
+			if(mapp=="Default"||mapp=="Default 2"||mapp=="WorldV")
 				stat("Map:","[mapp]")
 			else
 				stat("Map:","[mapp] (Custom Map)")
@@ -865,7 +873,7 @@ mob/Stat()
 			if(GameOn==1&&usr.playing==0&&usr.watching==0&&Resetting==0)
 				stat(watch)
 			if(GameOn==0)
-				stat(helper)
+				stat(CharacterSetup)
 			if(usr.joiner==0&&GameOn==0&&GameOver==0&&Resetting==0)
 				stat(join)
 			else if(usr.joiner==1&&GameOn==0&&GameOver==0&&Resetting==0)
@@ -1086,7 +1094,7 @@ proc
 				world.tick_lag=1
 			SpawnRate(spawnrate)
 			Lethality(llevel)
-			if(mapp=="Default"||mapp=="Default 2")
+			if(mapp=="Default"||mapp=="Default 2"||mapp=="WorldV")
 				goto nomap
 			else
 				var/id=mapp

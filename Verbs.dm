@@ -68,11 +68,63 @@ mob/ingame/verb
 
 				if(B.watching==1) B << "\icon[usr.chatavatar][usr] says, \" [T] \""
 				:nop
+	Push(var/mob/m in get_step(usr,usr.dir))
+		set src in oview(1)
+		if(usr.playing==0)return
+		if(usr.shinigami==1)return
+		if(usr.isGhost==1)return
+		if(usr.beatrice==1&&usr.icon_state=="butterfly")return
+		if(get_step(src,usr))
+			step(src,usr.dir,"Speed=0")
+			range(6,usr) << "[usr] shoves the [src]"
+	Pull()
+		set src in oview(1)
+		set name="Drag / Stop"
+		if(usr.playing==0)return
+		if(usr.shinigami==1)return
+		if(usr.beatrice==1&&usr.icon_state=="butterfly")return
+		if(usr.pulling&&usr.pulling==src)
+			usr.pulling=null
+			usr << "You stop dragging the [src]"
+			src.pulled=0
+			return
+		else if(usr.pulling)
+			for(var/mob/M in oview(3,usr))
+				if(M.pulling==src)
+					var/rander=rand(1,3)
+					if(rander==1)
+						M.pulling=null
+						src.pulled=1
+						M << "[usr] pulls the [src] away from you."
+					else
+						usr << "You failed to pull the [src] away from [M]."
+						M << "[usr] tries to pull the [src] away from you"
+						return
+			usr.pulling=src
+			usr << "You begin dragging the [src]"
+			src.pulled=1
+			return
+		else
+			for(var/mob/M in oview(3,usr))
+				if(M.pulling==src)
+					var/rander=rand(1,3)
+					if(rander==1)
+						M.pulling=null
+						M << "[usr] pulls the [src] away from you."
+						src.pulled=1
+					else
+						usr << "You failed to pull the [src] away from [M]."
+						M << "[usr] tries to pull the [src] away from you"
+						return
+			usr.pulling=src
+			usr << "You begin dragging the [src]"
+			src.pulled=1
 	Whisper(T as text)
 		//if(usr.shinigami==1)return
 		if(usr.beatrice==1&&usr.icon_state=="butterfly")return
 		if(usr.playing==0)return
 		if(usr.isGhost==1)return
+		if(T=="")return
 		var/len=length(T)
 		if(len>500)
 			T=copytext(T,1,500)
@@ -121,6 +173,7 @@ mob/ingame/verb
 		T=html_encode(T)
 		T=FilterString2(T)
 		var/len=length(T)
+		if(T=="")return
 		if(len>500)
 			T=copytext(T,1,500)
 
@@ -146,6 +199,7 @@ mob/ingame/verb
 		if(usr.zombie==1)return
 		if(usr.slender==1)return
 		if(usr.beatrice==1&&usr.icon_state=="butterfly")return
+		if(T=="")return
 		T=html_encode(T)
 		T=FilterString2(T)
 		var/len=length(T)
@@ -181,39 +235,24 @@ mob/ingame/verb
 					:enddd
 			else
 				usr << "[src] has declined to be searched."
-	View_Profile()
-		set category=null
-		set src in oview(7)
-		if(src.playing==0)return
-		if(usr.shinigami==1)return
-		var/cond="Perfect"
-		//usr << output(null, "aAge")
-		usr << output(null, "aAlias")
-		usr << output(null, "aProfile")
-		usr << output(null, "aHaircolor")
-		usr << output(null, "aCondition")
-		//usr << output(src.setage, "aAge")
-		usr << output(src.name, "aAlias")
-		usr << output(src.haircolor, "aHaircolor")
-		usr << output(src.setprofile, "aProfile")
-		winset(usr,"aHaircolor","background-color=[src.charhaircolor]")
-		if(src.hp>99) cond="Perfect"
-		if(src.hp<99&&src.hp>70) cond="Fine"
-		if(src.hp<70&&src.hp>60) cond="Hurt"
-		if(src.hp<60&&src.hp>40) cond="Badly Wouned"
-		if(src.hp<40&&src.hp>20) cond="Severely injured"
-		if(src.hp<20&&src.hp>0) cond="Dying..."
-		if(src.dead==1) cond="Dead"
-		usr << output(cond, "aCondition")
-		winshow(usr,"playerprofile",0)
-		winshow(usr,"playerprofile",1)
-		winset(usr,"playerprofile","size=383x265")
+
+var Examine = 0
+
+mob/verb
+	Examine()
+		set hidden=1
+		Examine = 1
+	ExamineReleased()
+		set hidden=1
+		Examine = 0
+
 mob/verb/SaveProf()
 	set hidden=1
 	if(usr.playing==1)return
 	usr.setprofile=winget(usr,"charprof","Text")
 	usr.save()
-mob/verb
+	usr << "Saved"
+mob/ingame/verb
 	Shove()
 		set name = "Push"
 		set src = oview(1)
@@ -576,9 +615,12 @@ mob/verb
 		usr << "Music stopped"
 		usr.playi=null
 	Who()
+		var player_num=0
 		for(var/mob/A in world)
 			if(A.client)
+				player_num+=1
 				usr << "[A.key]"
+		usr << "<b>Total Players: [player_num]</b>"
 	OOC(T as text)
 		//set name="OOC:"
 		if(usr.key in mutelist)
@@ -873,6 +915,33 @@ var
 
 mob/player
 	Click()
+		if(Examine==1)
+			set src in oview(7)
+			if(src.playing==0)return
+			if(usr.shinigami==1)return
+			var/cond="Perfect"
+			//usr << output(null, "aAge")
+			usr << output(null, "aAlias")
+			usr << output(null, "aProfile")
+			usr << output(null, "aHaircolor")
+			usr << output(null, "aCondition")
+			//usr << output(src.setage, "aAge")
+			usr << output(src.name, "aAlias")
+			usr << output(src.haircolor, "aHaircolor")
+			usr << output(src.setprofile, "aProfile")
+			winset(usr,"aHaircolor","background-color=[src.charhaircolor]")
+			if(src.hp>99) cond="Perfect"
+			if(src.hp<99&&src.hp>70) cond="Fine"
+			if(src.hp<70&&src.hp>60) cond="Hurt"
+			if(src.hp<60&&src.hp>40) cond="Badly Wouned"
+			if(src.hp<40&&src.hp>20) cond="Severely injured"
+			if(src.hp<20&&src.hp>0) cond="Dying..."
+			if(src.dead==1) cond="Dead"
+			usr << output(cond, "aCondition")
+			winshow(usr,"playerprofile",0)
+			winshow(usr,"playerprofile",1)
+			winset(usr,"playerprofile","size=717x465")
+			if(usr.canattack==1)return
 		if(usr.playing==0)return
 		if(attackdelayer==1)return
 		if(usr==src&&usr.noclickself==1)return
@@ -1052,13 +1121,17 @@ mob
 mob/verb/.showabout()
 	set hidden = 1
 	winshow(usr,"about",1)
-mob/verb/.showforums()
+mob/verb/.hotkeyhelp()
 	set hidden = 1
-	var/url2="http://pyrcehigh.crazy4us.com/"
-	winshow(usr,"wbrowse",1)
-	usr << browse(\
-"<html><head></head><body onLoad=\"parent.location='[url2]'\">\
-</body></html>","window=webbrowse")
+	usr << {"<u>Hotkeys:</u>
+<i>WASD - Walk
+C - Run
+T - Say
+5 - Emote
+Y - Whisper
+O - OOC
+Shift+Click - Examine
+CTRL + WASD - Look around</i>"}
 mob/var/list/ignorelist=new/list()
 mob/verb
 	.AddIgnore()
